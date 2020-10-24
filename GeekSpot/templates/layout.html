@@ -29,7 +29,11 @@
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
             <ul class="actions stacked">
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'logout' %}" class="button fit">Log out</a></li>
+                {%else%}
                 <li><a href="{% url 'login' %}" class="button fit">Log In/ Sign up</a></li>
+                {%endif%}
             </ul>
         </nav>
 
