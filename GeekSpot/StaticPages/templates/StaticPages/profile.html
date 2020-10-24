@@ -82,7 +82,7 @@
 						<h3>{{post.name}} &#183; {{post.pub_date}} </h3>
 						<p>{{post.content}}</p>
 						<img class="center" src="{{post.image.url}}" alt="">
-						<button onclick="window.location.href='{% url 'delete' post.id%}';"> </button>
+						<button onclick="window.location.href='{% url 'delete' post.id%}';"> remove blog </button>
 					</div>
 					{%endfor%}
 				</div>
