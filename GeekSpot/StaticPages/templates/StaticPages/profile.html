@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Profile</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+		{% load static %}
+		<link rel="stylesheet" href="{%  static 'assets/css/center.css' %}" />
+
+		<noscript>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+			<div id="wrapper">
+
+					<header id="header" class="alt style2">
+						<a href="{% url 'index' %}" class="logo"><strong>GeekSpot</strong></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'profile' %}">Profile</a></li>
+							<li><a href="{% url 'about' %}">About</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="{% url 'login' %}" class="button fit">Log In/ Sign up</a></li>
+						</ul>
+					</nav>
+
+					<section id="banner" class="style2" style="max-height:none; height:auto; padding:4em 0em 2em 0em;">
+						<div class="inner">
+							<span class="image">
+								{% load static %}
+								<img src="{% static 'images/pic07.jpg'%}" alt="" />
+							</span>
+							<header class="major">
+								<h1>Profile</h1>
+							</header>
+
+							{% for post in post_list %}
+							<div class="box">
+								<h3>{{post.name}} &#183; {{post.pub_date}} </h3>
+								<p>{{post.content}}</p>
+								<img class="center" src="{{post.image.url}}" alt="">
+							</div>
+							{%endfor%}
+
+						</div>
+					</section>
+
+					<footer id="footer">
+						<div class="inner" style="padding 4em 0em 2em 0em;">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; GeekSpot</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+	<!-- Scripts -->
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.scrolly.min.js'%}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/browser.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/util.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

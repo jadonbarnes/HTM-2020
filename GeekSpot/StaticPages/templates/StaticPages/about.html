@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Geekspot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		{% load static %}
+		<link rel="stylesheet" href="{%  static 'assets/css/center.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="{% url 'index' %}" class="logo"><strong>Geekspot</strong></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li><a href="{% url 'profile' %}">Profile</a></li>
+						<li><a href="{% url 'about' %}">About</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li><a href="{% url 'login' %}" class="button fit">Log In/ Sign up</a></li>
+					</ul>
+				</nav>
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>Hi, We are GeekSpot</h1>
+							</header>
+							<div class="content">
+								<p>Want to share your programming project<br /> or kindle someone
+									 else’s passion for programming<br /> share your story today.</p>
+								<ul class="actions">
+									<li><a href="#one" class="button next scrolly">Get Started</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one" class="tiles">
+								<article>
+									<span class="image">
+										{% load static %}
+										<img src="{static 'images/pic01.jpg' %}" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'login' %}" class="link">Sign Up/Login</a></h3>
+										<p>Get started</p>
+									</header>
+								</article>
+								<article>
+									<span class="image">
+										{%load static %}
+										<img src="{% static 'images/pic02.jpg'%}" alt="" />
+									</span>
+									<header class="major">
+										<h3><a href="{% url 'index' %}" class="link">Explore</a></h3>
+										<p>What suites your interests:)</p>
+									</header>
+								</article>
+
+
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="inner">
+									<header class="major">
+										<h2>Join Us Today</h2>
+									</header>
+									<p>Our goal is to provide you with new ideas, exemplare code and much more to get you interested in coding.<br />
+										 With projects ranging from a single line to hundred of pages,<br />
+										 we have a project that suits your level and interests.
+										 <br />
+										 <br />
+										<strong>“ I hear and I forget.
+										  I see and I remember.
+										  I do and I understand. ” <br /></strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - Confucius
+									</p>
+									<ul class="actions">
+										<li><a href="{% url 'login' %}" class="button next">Get Started</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+
+							<section>
+								<form method="post" action="mailto:GeekSpot.contact@gmail.com">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="mailto:GeekSpot.contact@gmail.com">GeekSpot.contact@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>+91 9123456789</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; GeekSpot</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		{% load static %}
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/jquery.scrolly.min.js'%}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/browser.min.js' %}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/util.js' %}"></script>
+		{% load static %}
+		<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

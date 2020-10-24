@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Newsfeed</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	{% load static %}
+	<link rel="stylesheet" href="{%  static 'assets/css/center.css' %}" />
+	<noscript>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+</head>
+
+<body class="is-preload">
+	<div id="wrapper">
+
+		<header id="header">
+			<a href="{% url 'index' %}" class="logo"><strong>GeekSpot</strong></a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="{% url 'profile' %}">Profile</a></li>
+				<li><a href="{% url 'about' %}">About</a></li>
+			</ul>
+			<ul class="actions stacked">
+				<li><a href="{% url 'login' %}" class="button fit">Log In/ Sign up</a></li>
+			</ul>
+		</nav>
+
+		<div id="main" class="alt">
+			<section id="one">
+				<div class="inner">
+					<header class="major">
+						<h1>Create blog</h1>
+					</header>
+					<!-- create Posts -->
+
+					<form method="post" enctype="multipart/form-data">
+					  {% csrf_token %}
+					   {{ form.as_p }}
+					  <button type="submit">Upload</button>
+					</form>
+
+					{% if img_obj %}
+					  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+					  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+					{% endif %}
+
+
+
+				</div>
+			</section>
+
+		</div>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; GeekSpot</li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.scrolly.min.js'%}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/browser.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/util.js' %}"></script>
+	{% load static %}
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
