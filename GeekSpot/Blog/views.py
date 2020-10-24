@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render, redirect
 from .forms import BlogForm
+from .models import Blog_post
+
 
 # Create your views here.
 def create(request):
@@ -16,3 +16,8 @@ def create(request):
     else:
         form = BlogForm()
     return render(request, 'Blog/create.html', {'form': form})
+
+def delete(request,post_id = None):
+    object = Blog_post.objects.get(id=post_id)
+    object.delete()
+    return redirect('profile')
